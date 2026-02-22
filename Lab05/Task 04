@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int category, choice, qty;
+    int price = 0;
+
+    printf("Category (1-Fiction, 2-Non-Fiction): ");
+    scanf("%d", &category);
+
+    switch (category) {
+        case 1:
+            printf("1-Novel  2-Comic: ");
+            scanf("%d", &choice);
+            if (choice == 1) price = 600;
+            else if (choice == 2) price = 300;
+            break;
+
+        case 2:
+            printf("1-Biography  2-Self Help: ");
+            scanf("%d", &choice);
+            if (choice == 1) price = 800;
+            else if (choice == 2) price = 500;
+            break;
+
+        default:
+            printf("Invalid Category\n");
+            return 0;
+    }
+
+    printf("Enter Quantity: ");
+    scanf("%d", &qty);
+
+    printf("Total Bill: Rs. %d\n", price * qty);
+    return 0;
+}
