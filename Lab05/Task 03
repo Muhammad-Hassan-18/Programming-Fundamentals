@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    int type, subType;
+    float weight, rate = 0;
+
+    printf("Luggage Type (1-Handbag, 2-Checked Bag, 3-Sports Equipment): ");
+    scanf("%d", &type);
+
+    printf("Enter Weight (kg): ");
+    scanf("%f", &weight);
+
+    switch (type) {
+        case 1:
+            printf("1-Small  2-Large: ");
+            scanf("%d", &subType);
+            switch (subType) {
+                case 1: rate = 100; break;
+                case 2: rate = 200; break;
+                default: printf("Invalid Option\n"); return 0;
+            }
+            break;
+
+        case 2:
+            printf("1-Domestic  2-International: ");
+            scanf("%d", &subType);
+            switch (subType) {
+                case 1: rate = 300; break;
+                case 2: rate = 500; break;
+                default: printf("Invalid Option\n"); return 0;
+            }
+            break;
+
+        case 3:
+            rate = 1000;
+            break;
+
+        default:
+            printf("Invalid Luggage Type\n");
+            return 0;
+    }
+
+    printf("Total Fee: Rs. %.2f\n", weight * rate);
+    return 0;
+}
