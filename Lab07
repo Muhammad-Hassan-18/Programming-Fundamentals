@@ -1,0 +1,18 @@
+#include &lt;stdio.h&gt;
+
+int main() {
+int status, present = 0;
+
+for(int i = 1; i &lt;= 30; i++) {
+printf(&quot;Enter attendance for student %d (1=Present, 0=Absent): &quot;, i);
+scanf(&quot;%d&quot;, &amp;status);
+
+if(status == 1) {
+present++;
+}
+}
+
+printf(&quot;Total students present: %d\n&quot;, present);
+
+return 0;
+}
